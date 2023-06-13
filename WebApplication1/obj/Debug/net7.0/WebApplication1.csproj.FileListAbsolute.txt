@@ -274,3 +274,8 @@ C:\Users\User\source\repos\WebApplication1\WebApplication1\obj\Debug\net7.0\WebA
 C:\Users\User\source\repos\WebApplication1\WebApplication1\obj\Debug\net7.0\WebApplication1.genruntimeconfig.cache
 C:\Users\User\source\repos\WebApplication1\WebApplication1\obj\Debug\net7.0\ref\WebApplication1.dll
 C:\Users\User\source\repos\WebApplication1\WebApplication1\obj\Debug\net7.0\WebApplication1.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\source\repos\WebApplication1\WebApplication1\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\User\source\repos\WebApplication1\WebApplication1\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\User\source\repos\WebApplication1\WebApplication1\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\User\source\repos\WebApplication1\WebApplication1\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\User\source\repos\WebApplication1\WebApplication1\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
