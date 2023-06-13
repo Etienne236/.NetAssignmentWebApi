@@ -273,3 +273,4 @@ C:\Users\User\source\repos\WebApplication1\WebApplication1\obj\Debug\net7.0\refi
 C:\Users\User\source\repos\WebApplication1\WebApplication1\obj\Debug\net7.0\WebApplication1.pdb
 C:\Users\User\source\repos\WebApplication1\WebApplication1\obj\Debug\net7.0\WebApplication1.genruntimeconfig.cache
 C:\Users\User\source\repos\WebApplication1\WebApplication1\obj\Debug\net7.0\ref\WebApplication1.dll
+C:\Users\User\source\repos\WebApplication1\WebApplication1\obj\Debug\net7.0\WebApplication1.MvcApplicationPartsAssemblyInfo.cs
