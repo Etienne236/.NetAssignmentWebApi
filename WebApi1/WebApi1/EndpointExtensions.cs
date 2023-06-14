@@ -6,7 +6,7 @@ namespace WebApi1
     {
         public static void MapProductEndpoints(this IApplicationBuilder app)
         {
-            app.Map("/products", productsApp =>
+            app.Map("/product", productsApp =>
             {
                 productsApp.UseRouting();
                 productsApp.UseEndpoints(endpoints =>
@@ -84,6 +84,42 @@ namespace WebApi1
                         // Handle DELETE request for deleting a warehouse by ID
                         var id = int.Parse(context.Request.RouteValues["id"].ToString());
                         await context.Response.WriteAsync($"Deleting warehouse with ID: {id}");
+                    });
+                });
+            });
+        }
+
+        public static void MapEmployeeEndpoints(this IApplicationBuilder app)
+        {
+            app.Map("/employee", productsApp =>
+            {
+                productsApp.UseRouting();
+                productsApp.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapGet("/", async context =>
+                    {
+                        // Handle GET request for listing all products
+                        await context.Response.WriteAsync("Listing all employees");
+                    });
+
+                    endpoints.MapGet("/{id:int}", async context =>
+                    {
+                        // Handle GET request for retrieving a specific product by ID
+                        var id = int.Parse(context.Request.RouteValues["id"].ToString());
+                        await context.Response.WriteAsync($"Retrieving employee with ID: {id}");
+                    });
+
+                    endpoints.MapPost("/", async context =>
+                    {
+                        // Handle POST request for creating a new product
+                        await context.Response.WriteAsync("Creating a new employee");
+                    });
+
+                    endpoints.MapPut("/{id:int}", async context =>
+                    {
+                        // Handle PUT request for updating a product by ID
+                        var id = int.Parse(context.Request.RouteValues["id"].ToString());
+                        await context.Response.WriteAsync($"Updating employee with ID: {id}");
                     });
                 });
             });

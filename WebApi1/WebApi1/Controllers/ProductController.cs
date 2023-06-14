@@ -31,9 +31,16 @@ namespace WebApi1.Controllers
         }
 
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            return _dbContext.Products.FirstOrDefaultAsync(x => x.Id == id).ToString();
+            var product = _dbContext.Products.FirstOrDefault(x => x.Id == id);
+
+            if (product != null)
+            {
+                return Ok(product);
+            }
+
+            return BadRequest("No Products Available"); // or return any default value if the warehouse is not found
         }
 
         // POST api/<ProductController>
@@ -50,11 +57,13 @@ namespace WebApi1.Controllers
                 return BadRequest(ModelState);
             }
 
+
+
             SqlParameter[] parameters = new SqlParameter[]
             {
         new SqlParameter("@Name", product.Name),
         new SqlParameter("@Quantity", product.Quantity),
-        new SqlParameter("@Warehouse", product.Warehouse)
+        new SqlParameter("@Warehouse", product.WarehouseId)
             };
 
             await _dbContext.Database.ExecuteSqlRawAsync("EXECUTE dbo.InsertProduct @Name, @Quantity, @Warehouse", parameters);
@@ -65,7 +74,7 @@ namespace WebApi1.Controllers
 
         // PUT api/<ProductController>/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateProduct(int id, [FromBody] Product product)
+        public async Task<IActionResult> UpdateProduct(int id, [FromBody] ProductDetails product)
         {
             if (product == null)
             {
@@ -77,17 +86,12 @@ namespace WebApi1.Controllers
                 return BadRequest("Product ID mismatch.");
             }
 
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             SqlParameter[] parameters = new SqlParameter[]
             {
         new SqlParameter("@Id", id),
         new SqlParameter("@Name", product.Name),
         new SqlParameter("@Quantity", product.Quantity),
-        new SqlParameter("@Warehouse", product.Warehouse)
+        new SqlParameter("@Warehouse", product.WarehouseId)
             };
 
             await _dbContext.Database.ExecuteSqlRawAsync("EXECUTE dbo.UpdateProduct @Id, @Name, @Quantity, @Warehouse", parameters);
