@@ -32,5 +32,6 @@ app.MapControllers();
 
 app.MapProductEndpoints();
 app.MapWarehouseEndpoints();
+app.MapEmployeeEndpoints();
 
 app.Run();
