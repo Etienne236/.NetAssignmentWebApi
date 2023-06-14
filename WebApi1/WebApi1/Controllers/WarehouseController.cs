@@ -37,7 +37,7 @@ namespace WebApi1.Controllers
 
             if (warehouse != null)
             {
-                return Ok(warehouse); // Return the name of the warehouse
+                return Ok(warehouse);
             }
 
             return BadRequest("No Warehouse Available"); // or return any default value if the warehouse is not found

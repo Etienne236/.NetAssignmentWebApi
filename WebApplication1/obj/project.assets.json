@@ -11067,8 +11067,8 @@
     },
     "WebApi1/1.0.0": {
       "type": "project",
-      "path": "../../WebApi1/WebApi1/WebApi1.csproj",
-      "msbuildProject": "../../WebApi1/WebApi1/WebApi1.csproj"
+      "path": "../WebApi1/WebApi1/WebApi1.csproj",
+      "msbuildProject": "../WebApi1/WebApi1/WebApi1.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -11111,6 +11111,9 @@
           "projectReferences": {
             "C:\\Users\\User\\source\\repos\\WebApi1\\WebApi1\\WebApi1.csproj": {
               "projectPath": "C:\\Users\\User\\source\\repos\\WebApi1\\WebApi1\\WebApi1.csproj"
+            },
+            "C:\\Users\\User\\source\\repos\\WebApplication1\\WebApi1\\WebApi1\\WebApi1.csproj": {
+              "projectPath": "C:\\Users\\User\\source\\repos\\WebApplication1\\WebApi1\\WebApi1\\WebApi1.csproj"
             }
           }
         }
